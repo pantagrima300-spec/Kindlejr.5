@@ -12,9 +12,6 @@ import LanguageSelection from "./pages/LanguageSelection";
 import CodingArena from "./pages/CodingArena";
 import Round2Result from "./pages/Round2Result";
 import Round3Guidelines from "./pages/Round3Guidelines";
-import FeatureExtension from "./pages/FeatureExtension";
-import ComputerIsLying from "./pages/ComputerIsLying";
-import TechnicalAuction from "./pages/TechnicalAuction";
 function App() {
   return (
     <BrowserRouter>
@@ -73,20 +70,7 @@ function App() {
           path="/round-3-guidelines"
           element={<Round3Guidelines />}
         />
-        <Route
-  path="/round-3/feature-extension-guidelines"
-  element={<FeatureExtension />}
-/>
-
-<Route
-  path="/round-3/computer-is-lying-guidelines"
-  element={<ComputerIsLying />}
-/>
-
-<Route
-  path="/round-3/technical-auction-guidelines"
-  element={<TechnicalAuction />}
-/>
+        
       </Routes>
     </BrowserRouter>
   );
