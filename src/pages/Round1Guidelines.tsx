@@ -101,10 +101,10 @@ const Round1Guidelines = () => {
               </div>
 
               <div>
-                <strong>40 Questions</strong>
+                <strong>20 Questions</strong>
 
                 <p>
-                  You will answer 40 multiple-choice
+                  You will answer 20 multiple-choice
                   questions.
                 </p>
               </div>
@@ -119,10 +119,10 @@ const Round1Guidelines = () => {
               </div>
 
               <div>
-                <strong>40 Minutes</strong>
+                <strong>10 Minutes</strong>
 
                 <p>
-                  You have a total of 40 minutes
+                  You have a total of 10 minutes
                   to complete the round.
                 </p>
               </div>
@@ -140,8 +140,9 @@ const Round1Guidelines = () => {
                 <strong>Programming Domains</strong>
 
                 <p>
-                  Questions will cover C, C++,
-                  Python and Java.
+                  Questions will cover C, python 
+                  and basic aptitude
+
                 </p>
               </div>
 
@@ -155,11 +156,11 @@ const Round1Guidelines = () => {
               </div>
 
               <div>
-                <strong>One Minute Per Question</strong>
+                <strong>30 seconds Per Question</strong>
 
                 <p>
                   The round is designed around
-                  approximately one minute per question.
+                  approximately 30 seconds per question.
                 </p>
               </div>
 
@@ -195,7 +196,7 @@ const Round1Guidelines = () => {
           <div className="guidelines-card-footer">
 
             <div className="question-domains">
-              C · C++ · PYTHON · JAVA
+              C · PYTHON 
             </div>
 
             <Link
@@ -226,11 +227,11 @@ const Round1Guidelines = () => {
 
           <i />
 
-          <span>40 QUESTIONS</span>
+          <span>20QUESTIONS</span>
 
           <i />
 
-          <span>40 MINUTES</span>
+          <span>10 MINUTES</span>
 
         </div>
 

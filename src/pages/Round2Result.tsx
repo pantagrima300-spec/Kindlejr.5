@@ -15,10 +15,10 @@ const Round1Result = () => {
   const result = location.state || {
     score: 0,
     total: 40,
-    correct: 32,
+    correct: 0,
     incorrect: 5,
     unanswered: 3,
-    timeTaken: "32:18",
+    timeTaken: "6:30",
   };
 
   const percentage = Math.round(
