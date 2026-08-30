@@ -101,10 +101,10 @@ const Round1Guidelines = () => {
               </div>
 
               <div>
-                <strong>20 Questions</strong>
+                <strong>40 Questions</strong>
 
                 <p>
-                  You will answer 20 multiple-choice
+                  You will answer 40 multiple-choice
                   questions.
                 </p>
               </div>
@@ -119,10 +119,10 @@ const Round1Guidelines = () => {
               </div>
 
               <div>
-                <strong>10 Minutes</strong>
+                <strong>40 Minutes</strong>
 
                 <p>
-                  You have a total of 10 minutes
+                  You have a total of 40 minutes
                   to complete the round.
                 </p>
               </div>
@@ -156,11 +156,11 @@ const Round1Guidelines = () => {
               </div>
 
               <div>
-                <strong>30 seconds Per Question</strong>
+                <strong>45 seconds Per Question</strong>
 
                 <p>
                   The round is designed around
-                  approximately 30 seconds per question.
+                  approximately 45 seconds per question.
                 </p>
               </div>
 
@@ -227,11 +227,11 @@ const Round1Guidelines = () => {
 
           <i />
 
-          <span>20QUESTIONS</span>
+          <span>40QUESTIONS</span>
 
           <i />
 
-          <span>10 MINUTES</span>
+          <span>40 MINUTES</span>
 
         </div>
 

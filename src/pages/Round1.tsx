@@ -10,155 +10,295 @@ import CircuitBackground from "../components/CircuitBackground";
 
 type Question = {
   id: number;
-  language: "C" | "C++" | "Python" | "Java" | "JavaScript";
+  domain: string;
   question: string;
   options: string[];
   answer: number;
 };
 
-
 const QUESTION_BANK: Question[] = [
   {
     id: 1,
-    language: "C",
-    question: "If a train travels 60 km in 1 hour, how far will it travel in 3 hours at the same speed?",
-    options: ["120 km", "180 km", "200 km", "90 km"],
-    answer: 1,
-  },
-  {
-    id: 2,
-    language: "C",
-    question: "What comes next in the series: 2, 4, 8, 16, __?",
-    options: ["18", "24", "32", "20"],
+    domain: "Computer Fundamentals",
+    question: "Which component is widely considered the 'brain' of a computer system?",
+    options: ["Random Access Memory (RAM)", "Hard Disk Drive (HDD)", "Central Processing Unit (CPU)", "Motherboard"],
     answer: 2,
   },
   {
+    id: 2,
+    domain: "General CS",
+    question: "What does HTTP stand for in the context of web browsing?",
+    options: ["High-level Text Transfer Protocol", "HyperText Transfer Protocol", "Hyperlink Translation Technology Protocol", "HyperText Transmission Process"],
+    answer: 1,
+  },
+  {
     id: 3,
-    language: "C",
-    question: "If 5 workers can build a wall in 10 days, how many days will 10 workers take?",
-    options: ["20 days", "5 days", "10 days", "2 days"],
+    domain: "AI Basics",
+    question: "Which of the following is a common example of an Artificial Intelligence voice assistant?",
+    options: ["Microsoft Excel", "Apple Siri", "Mozilla Firefox", "Adobe Photoshop"],
     answer: 1,
   },
   {
     id: 4,
-    language: "C",
-    question: "A shopkeeper sells an item for Rs.120 which cost him Rs.100. What is his profit percentage?",
-    options: ["10%", "15%", "20%", "25%"],
-    answer: 2,
+    domain: "Cybersecurity",
+    question: "What is the cybersecurity term for a deceptive email designed to trick you into revealing sensitive information like passwords?",
+    options: ["Spoofing", "Phishing", "DDoS", "Malware"],
+    answer: 1,
   },
   {
     id: 5,
-    language: "C",
-    question: "Find the odd one out: Apple, Banana, Carrot, Mango",
-    options: ["Apple", "Banana", "Carrot", "Mango"],
-    answer: 2,
+    domain: "Operating Systems",
+    question: "What is the primary function of an Operating System?",
+    options: ["To scan the computer for viruses", "To manage computer hardware and software resources", "To create documents and presentations", "To browse the internet"],
+    answer: 1,
   },
   {
     id: 6,
-    language: "C",
-    question: "If today is Monday, what day will it be after 10 days?",
-    options: ["Wednesday", "Thursday", "Friday", "Tuesday"],
+    domain: "Basic Logic",
+    question: "Logic: If 2 = 4, 3 = 9, and 4 = 16, what does 6 equal?",
+    options: ["24", "36", "12", "20"],
     answer: 1,
   },
   {
     id: 7,
-    language: "C",
-    question: "Which of the following is used to declare an integer variable in C?",
-    options: ["int x;", "integer x;", "var x;", "num x;"],
-    answer: 0,
+    domain: "Generative AI",
+    question: "What does 'LLM' stand for in the context of Generative AI?",
+    options: ["Low-Latency Memory", "Large Language Model", "Logical Learning Machine", "Linear Logic Module"],
+    answer: 1,
   },
   {
     id: 8,
-    language: "C",
-    question: "Which symbol is used to end a statement in C?",
-    options: [":", ";", ".", ","],
+    domain: "Computer Fundamentals",
+    question: "Approximately how many bytes are in a standard Kilobyte (KB) in binary computing?",
+    options: ["1000", "1024", "1048", "2048"],
     answer: 1,
   },
   {
     id: 9,
-    language: "C",
-    question: "What is the correct format specifier for printing an integer using printf in C?",
-    options: ["%d", "%f", "%s", "%c"],
-    answer: 0,
+    domain: "General CS",
+    question: "Which network topology uses a central hub or switch to connect all nodes?",
+    options: ["Ring Topology", "Mesh Topology", "Star Topology", "Bus Topology"],
+    answer: 2,
   },
   {
     id: 10,
-    language: "C",
-    question: "Which header file is required to use printf() and scanf() in C?",
-    options: ["stdlib.h", "stdio.h", "string.h", "math.h"],
+    domain: "AI Basics",
+    question: "The 'Turing Test' was originally designed to evaluate what?",
+    options: ["The processing speed of a CPU", "A machine's ability to exhibit human-like intelligent behavior", "The accuracy of a sorting algorithm", "The encryption strength of a network"],
     answer: 1,
   },
   {
     id: 11,
-    language: "C",
-    question: 'What will be the output of: printf("%d", 5+3);',
-    options: ["53", "8", "5+3", "Error"],
-    answer: 1,
+    domain: "Cybersecurity",
+    question: "What does the 'S' stand for in the HTTPS protocol?",
+    options: ["Server", "System", "Secure", "Standard"],
+    answer: 2,
   },
   {
     id: 12,
-    language: "C",
-    question: "Which loop is guaranteed to execute at least once in C?",
-    options: ["for loop", "while loop", "do-while loop", "none of these"],
+    domain: "Operating Systems",
+    question: "What term describes an Operating System's ability to execute multiple processes seemingly at the same time?",
+    options: ["Multithreading", "Multiprocessing", "Multitasking", "Paging"],
     answer: 2,
   },
   {
     id: 13,
-    language: "C",
-    question: "What is the size of an 'int' data type typically in C (on most systems)?",
-    options: ["1 byte", "2 bytes", "4 bytes", "8 bytes"],
-    answer: 2,
+    domain: "Basic Logic",
+    question: "Logic: What is the next number in the series: 2, 5, 10, 17, 26, ...?",
+    options: ["35", "37", "39", "41"],
+    answer: 1,
   },
   {
     id: 14,
-    language: "Python",
-    question: "Which of the following is used to print output in Python?",
-    options: ["echo()", "print()", "printf()", "cout"],
+    domain: "Generative AI",
+    question: "In Generative AI, what is a 'prompt'?",
+    options: ["The final output generated by the AI", "The input instruction or query given to the AI model", "The server where the AI is hosted", "The algorithm used to sort AI responses"],
     answer: 1,
   },
   {
     id: 15,
-    language: "Python",
-    question: "How do you write a comment in Python?",
-    options: ["// comment", "/* comment */", "# comment", "comment"],
+    domain: "Computer Fundamentals",
+    question: "Which type of non-volatile memory typically holds the basic startup routine (BIOS/UEFI) of a computer?",
+    options: ["RAM", "Cache", "ROM", "Virtual Memory"],
     answer: 2,
   },
   {
     id: 16,
-    language: "Python",
-    question: "Which data type is the value True in Python?",
-    options: ["int", "bool", "str", "float"],
+    domain: "General CS",
+    question: "A system of interlinked hypertext documents accessed via the Internet is commonly known as:",
+    options: ["The Intranet", "The World Wide Web", "The Dark Web", "The Local Area Network"],
     answer: 1,
   },
   {
     id: 17,
-    language: "Python",
-    question: "What is the correct file extension for Python files?",
-    options: [".pt", ".pyt", ".py", ".pyth"],
-    answer: 2,
+    domain: "AI Basics",
+    question: "In Artificial Intelligence, 'Expert Systems' are designed to:",
+    options: ["Enhance internet speeds", "Solve complex problems by reasoning through specific bodies of knowledge", "Compress large video files", "Manage hard drive partitions"],
+    answer: 1,
   },
   {
     id: 18,
-    language: "Python",
-    question: "Which keyword is used to define a function in Python?",
-    options: ["function", "def", "func", "define"],
+    domain: "Cybersecurity",
+    question: "Ransomware is a specific type of malicious software that typically does what?",
+    options: ["Secretly uses your computer to mine cryptocurrency", "Encrypts user data and demands payment for the decryption key", "Steals passwords by logging keystrokes", "Displays unwanted popup advertisements"],
     answer: 1,
   },
   {
     id: 19,
-    language: "Python",
-    question: 'What will len("Hello") return in Python?',
-    options: ["4", "5", "6", "Error"],
+    domain: "Operating Systems",
+    question: "Virtual Memory allows an Operating System to:",
+    options: ["Run purely on cloud servers", "Use a portion of the hard drive as if it were additional RAM", "Bypass the CPU for faster processing", "Operate without a user interface"],
     answer: 1,
   },
   {
     id: 20,
-    language: "Python",
-    question: "Which operator is used for exponentiation (power) in Python?",
-    options: ["^", "**", "//", "%"],
+    domain: "Basic Logic",
+    question: "Logic: If A is the brother of B; B is the sister of C; and C is the father of D, how is D related to A?",
+    options: ["Nephew", "Niece", "Cousin", "Cannot be determined"],
+    answer: 3,
+  },
+  {
+    id: 21,
+    domain: "Generative AI",
+    question: "In the context of Large Language Models (LLMs), what does 'hallucination' refer to?",
+    options: ["A visual interface glitch in the AI application", "The generation of plausible-sounding but factually incorrect or nonsensical information", "When the AI refuses to answer a prompt", "The ability of the AI to generate images from text"],
     answer: 1,
   },
+  {
+    id: 22,
+    domain: "Cybersecurity",
+    question: "What is a 'Zero-day' vulnerability in cybersecurity?",
+    options: ["A virus that deletes all files in exactly zero days", "A software flaw known to attackers but unknown to the software vendor", "A security protocol that requires zero passwords", "A network breach that lasted less than 24 hours"],
+    answer: 1,
+  },
+  {
+    id: 23,
+    domain: "General CS",
+    question: "Which of the following statements is generally true regarding NoSQL databases compared to traditional relational databases?",
+    options: ["They strictly enforce tabular schemas using SQL", "They are designed specifically for unstructured or semi-structured data with dynamic schemas", "They cannot be hosted in the cloud", "They do not support any form of data querying"],
+    answer: 1,
+  },
+  {
+    id: 24,
+    domain: "Computer Fundamentals",
+    question: "What is the correct binary equivalent of the decimal number 25?",
+    options: ["10101", "10011", "11101", "11001"],
+    answer: 3,
+  },
+  {
+    id: 25,
+    domain: "Basic Logic",
+    question: "Logic: You have 8 identical-looking balls. 7 weigh the same, but 1 is slightly heavier. What is the minimum number of weighings on a balance scale required to guarantee finding the heavier ball?",
+    options: ["1", "2", "3", "4"],
+    answer: 1,
+  },
+  {
+    id: 26,
+    domain: "Operating Systems",
+    question: "A 'deadlock' in an operating system occurs when:",
+    options: ["The CPU overheats and shuts down", "Two or more processes are waiting indefinitely for an event that can be caused only by one of the waiting processes", "The hard drive runs completely out of storage space", "A user forgets their administrator password"],
+    answer: 1,
+  },
+  {
+    id: 27,
+    domain: "AI Basics",
+    question: "The 'Minimax' algorithm is most commonly utilized in which specific domain of Artificial Intelligence?",
+    options: ["Natural Language Processing", "Facial Recognition", "Two-player game playing (e.g., Chess, Tic-Tac-Toe)", "Autonomous driving"],
+    answer: 2,
+  },
+  {
+    id: 28,
+    domain: "Generative AI",
+    question: "Which foundational architectural concept enabled the current generation of highly capable LLMs by allowing models to weigh the importance of different words in a sentence?",
+    options: ["The Attention Mechanism (Transformers)", "Convolutional Layers", "Support Vector Machines", "K-Means Clustering"],
+    answer: 0,
+  },
+  {
+    id: 29,
+    domain: "Computer Fundamentals",
+    question: "What does RAM stand for in computer hardware?",
+    options: ["Read Access Memory", "Random Access Memory", "Run All Memory", "Rapid Application Memory"],
+    answer: 1,
+  },
+  {
+    id: 30,
+    domain: "Computer Fundamentals",
+    question: "Which of the following is considered an input device?",
+    options: ["Monitor", "Printer", "Mouse", "Speaker"],
+    answer: 2,
+  },
+  {
+    id: 31,
+    domain: "General CS",
+    question: "What is the main purpose of an IP address on a network?",
+    options: ["To prevent viruses", "To identify a specific device on the network", "To increase internet speed", "To encrypt data automatically"],
+    answer: 1,
+  },
+  {
+    id: 32,
+    domain: "General CS",
+    question: "In computing, what does GUI stand for?",
+    options: ["General User Integration", "Graphical User Interface", "Global Utility Index", "Guided User Instruction"],
+    answer: 1,
+  },
+  {
+    id: 33,
+    domain: "AI Basics",
+    question: "Which subfield of AI focuses specifically on enabling computers to understand, interpret, and generate human language?",
+    options: ["Computer Vision", "Natural Language Processing (NLP)", "Robotics", "Expert Systems"],
+    answer: 1,
+  },
+  {
+    id: 34,
+    domain: "Cybersecurity",
+    question: "What is the primary function of a network firewall?",
+    options: ["To store backups", "To increase download speeds", "To monitor and filter incoming and outgoing network traffic", "To cool down server hardware"],
+    answer: 2,
+  },
+  {
+    id: 35,
+    domain: "Cybersecurity",
+    question: "What does VPN stand for in the context of internet security?",
+    options: ["Virtual Private Network", "Verified Public Node", "Visual Processing Network", "Virtual Protocol Name"],
+    answer: 0,
+  },
+  {
+    id: 36,
+    domain: "Operating Systems",
+    question: "Which of the following is a widely used open-source operating system kernel?",
+    options: ["Windows", "macOS", "iOS", "Linux"],
+    answer: 3,
+  },
+  {
+    id: 37,
+    domain: "Basic Logic",
+    question: "Logic: Find the odd one out from the following list.",
+    options: ["Apple", "Banana", "Carrot", "Orange"],
+    answer: 2,
+  },
+  {
+    id: 38,
+    domain: "Basic Logic",
+    question: "Logic: If A=1, B=2, C=3... what is the numerical value of the word 'CAB' if you add the letter values together?",
+    options: ["5", "6", "7", "8"],
+    answer: 1,
+  },
+  {
+    id: 39,
+    domain: "Generative AI",
+    question: "Which AI tool is widely known for generating high-quality images from text descriptions?",
+    options: ["Microsoft Excel", "Midjourney", "VLC Media Player", "Notepad"],
+    answer: 1,
+  },
+  {
+    id: 40,
+    domain: "Generative AI",
+    question: "In prompt engineering, what does 'few-shot prompting' refer to?",
+    options: ["Giving the AI zero context before a task", "Providing the AI with a few examples before asking it to perform a task", "Asking the AI to reply in less than 5 words", "Taking screenshots of the AI's output"],
+    answer: 1,
+  }
 ];
+
 
 /* =========================================================
    SHUFFLE
@@ -169,11 +309,7 @@ const shuffleQuestions = (questions: Question[]) => {
 
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-
-    [shuffled[i], shuffled[j]] = [
-      shuffled[j],
-      shuffled[i],
-    ];
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
 
   return shuffled;
@@ -187,9 +323,6 @@ const shuffleQuestions = (questions: Question[]) => {
 const Round1 = () => {
   const navigate = useNavigate();
 
-  /*
-   * Questions are shuffled ONCE when Round 1 starts.
-   */
   const questions = useMemo(
     () => shuffleQuestions(QUESTION_BANK),
     []
@@ -197,40 +330,19 @@ const Round1 = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  /*
-   * Stores:
-   * questionId -> selected option
-   */
   const [answers, setAnswers] = useState<
     Record<number, number>
   >({});
 
-  /*
-   * 30 seconds for EVERY question.
-   */
-  const [timeLeft, setTimeLeft] = useState(30);
-
+  const [timeLeft, setTimeLeft] = useState(45);
   const [showSubmit, setShowSubmit] = useState(false);
-
-  /*
-   * Prevents multiple automatic submissions.
-   */
   const [submitted, setSubmitted] = useState(false);
 
   const currentQuestion = questions[currentIndex];
 
-  /* =======================================================
-     RESET TIMER FOR EVERY NEW QUESTION
-  ======================================================= */
-
   useEffect(() => {
-    setTimeLeft(30);
+    setTimeLeft(45);
   }, [currentIndex]);
-
-
-  /* =======================================================
-     30 SECOND TIMER
-  ======================================================= */
 
   useEffect(() => {
     if (submitted || showSubmit) return;
@@ -254,11 +366,6 @@ const Round1 = () => {
     showSubmit,
   ]);
 
-
-  /* =======================================================
-     SELECT ANSWER
-  ======================================================= */
-
   const selectAnswer = (optionIndex: number) => {
     setAnswers((previous) => ({
       ...previous,
@@ -266,27 +373,15 @@ const Round1 = () => {
     }));
   };
 
-
-  /* =======================================================
-     NEXT QUESTION
-  ======================================================= */
-
-  const handleNextQuestion = (
-    automatic = false
-  ) => {
+  const handleNextQuestion = (automatic = false) => {
     if (currentIndex >= questions.length - 1) {
       setShowSubmit(true);
       return;
     }
 
     setCurrentIndex((previous) => previous + 1);
-    setTimeLeft(30);
+    setTimeLeft(45);
   };
-
-
-  /* =======================================================
-     FINAL SUBMISSION
-  ======================================================= */
 
   const submitQuiz = () => {
     if (submitted) return;
@@ -309,29 +404,15 @@ const Round1 = () => {
       }
     });
 
-    /*
-     * 30 seconds × completed questions
-     *
-     * This represents the maximum time spent
-     * across questions already visited.
-     */
-    const completedQuestions =
-      currentIndex + 1;
+    const completedQuestions = currentIndex + 1;
+    const totalTime = completedQuestions * 45 - timeLeft;
 
-    const totalTime =
-      completedQuestions * 30 -
-      timeLeft;
-
-    const minutes = Math.floor(
-      totalTime / 60
-    );
-
+    const minutes = Math.floor(totalTime / 60);
     const seconds = totalTime % 60;
 
-    const timeTaken =
-      `${String(minutes).padStart(2, "0")}:${String(
-        seconds
-      ).padStart(2, "0")}`;
+    const timeTaken = `${String(minutes).padStart(2, "0")}:${String(
+      seconds
+    ).padStart(2, "0")}`;
 
     navigate("/round-1-result", {
       state: {
@@ -345,357 +426,186 @@ const Round1 = () => {
     });
   };
 
-
-  /* =======================================================
-     TIMER COLOR
-  ======================================================= */
-
   const timerDanger = timeLeft <= 10;
-
-  const progress =
-    ((30 - timeLeft) / 30) * 100;
-
+  const progress = ((45 - timeLeft) / 45) * 100;
 
   return (
     <main className="round-page">
-
       <CircuitBackground />
-
       <div className="round-overlay" />
 
-
-      {/* ===================================================
-          HEADER
-      =================================================== */}
-
       <header className="round-header">
-
         <div className="round-brand">
-
           <span className="round-brand-dot" />
-
           <div>
-            <div className="round-brand-small">
-              KINDLE JUNIOR
-            </div>
-
-            <div className="round-brand-name">
-              5.0
-            </div>
+            <div className="round-brand-small">KINDLE JUNIOR</div>
+            <div className="round-brand-name">5.0</div>
           </div>
-
         </div>
 
-
-        <div className="round-title">
-          ROUND 01 · RAPID FIRE
-        </div>
-
+        <div className="round-title">ROUND 01 · RAPID FIRE</div>
 
         <div
           className={`round-timer ${
             timerDanger ? "timer-danger" : ""
           }`}
         >
-
           <Clock3 size={17} />
-
           <div>
             <span>TIME LEFT</span>
-
             <strong>
               00:{String(timeLeft).padStart(2, "0")}
             </strong>
           </div>
-
         </div>
-
       </header>
-
-
-      {/* ===================================================
-          MAIN
-      =================================================== */}
 
       <section className="round-container">
 
-
-        {/* QUESTION META */}
-
         <div className="question-meta">
-
           <div>
-
-            <span className="question-label">
-              QUESTION
-            </span>
-
+            <span className="question-label">QUESTION</span>
             <strong>
-              {String(currentIndex + 1).padStart(
-                2,
-                "0"
-              )}
+              {String(currentIndex + 1).padStart(2, "0")}
               <small>
                 / {String(questions.length).padStart(2, "0")}
               </small>
             </strong>
-
           </div>
-
-
           <div className="question-language">
-            {currentQuestion.language}
+            {currentQuestion.domain}
           </div>
-
         </div>
 
-
-        {/* PROGRESS */}
-
         <div className="question-progress">
-
           <div
             style={{
               width: `${
-                ((currentIndex + 1) /
-                  questions.length) *
-                100
+                ((currentIndex + 1) / questions.length) * 100
               }%`,
             }}
           />
-
         </div>
 
-
-        {/* =================================================
-            QUESTION CARD
-        ================================================= */}
-
         <div className="question-card">
-
           <div className="question-card-top">
-
-            <span>
-              CHALLENGE {currentIndex + 1}
-            </span>
-
-            <span>
-              30 SEC
-            </span>
-
+            <span>CHALLENGE {currentIndex + 1}</span>
+            <span>45 SEC</span>
           </div>
 
-
-          <h1>
-            {currentQuestion.question}
-          </h1>
-
-
-          {/* OPTIONS */}
+          <h1>{currentQuestion.question}</h1>
 
           <div className="options-container">
-
-            {currentQuestion.options.map(
-              (option, index) => {
-
-                const selected =
-                  answers[currentQuestion.id] ===
-                  index;
-
-                return (
-                  <button
-                    key={index}
-                    type="button"
-                    onClick={() =>
-                      selectAnswer(index)
-                    }
-                    className={`option-card ${
-                      selected
-                        ? "option-selected"
-                        : ""
-                    }`}
-                  >
-
-                    <span className="option-number">
-                      {String.fromCharCode(
-                        65 + index
-                      )}
-                    </span>
-
-                    <span className="option-text">
-                      {option}
-                    </span>
-
-                    {selected && (
-                      <CheckCircle2
-                        size={18}
-                        className="option-check"
-                      />
-                    )}
-
-                  </button>
-                );
-              }
-            )}
-
+            {currentQuestion.options.map((option, index) => {
+              const selected = answers[currentQuestion.id] === index;
+              return (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => selectAnswer(index)}
+                  className={`option-card ${
+                    selected ? "option-selected" : ""
+                  }`}
+                >
+                  <span className="option-number">
+                    {String.fromCharCode(65 + index)}
+                  </span>
+                  <span className="option-text">{option}</span>
+                  {selected && (
+                    <CheckCircle2
+                      size={18}
+                      className="option-check"
+                    />
+                  )}
+                </button>
+              );
+            })}
           </div>
 
-
-          {/* TIMER BAR */}
-
           <div className="question-timer-bar">
-
             <div
               className={
-                timerDanger
-                  ? "timer-progress-danger"
-                  : ""
+                timerDanger ? "timer-progress-danger" : ""
               }
               style={{
                 width: `${progress}%`,
               }}
             />
-
           </div>
 
-
-          {/* NEXT */}
-
           <div className="question-action">
-
             <div className="rapid-note">
-
               <AlertTriangle size={14} />
-
-              <span>
-                Time-out automatically moves to
-                the next question.
-              </span>
-
+              <span>Time-out automatically moves to the next question.</span>
             </div>
-
 
             <button
               className="next-question-button"
-              onClick={() =>
-                handleNextQuestion(false)
-              }
+              onClick={() => handleNextQuestion(false)}
             >
-
-              {currentIndex ===
-              questions.length - 1
+              {currentIndex === questions.length - 1
                 ? "SUBMIT ROUND"
                 : "NEXT QUESTION"}
-
               <ChevronRight size={18} />
-
             </button>
-
           </div>
-
         </div>
-
-
-        {/* BOTTOM INFO */}
 
         <div className="round-footer">
-
           <span>
-            {currentIndex + 1} OF{" "}
-            {questions.length} QUESTIONS
+            {currentIndex + 1} OF {questions.length} QUESTIONS
           </span>
-
           <i />
-
-          <span>
-            30 SECONDS EACH
-          </span>
-
+          <span>45 SECONDS EACH</span>
           <i />
-
-          <span>
-            NO BACKTRACKING
-          </span>
-
+          <span>NO BACKTRACKING</span>
         </div>
-
       </section>
 
-
-      {/* ===================================================
-          SUBMIT MODAL
-      =================================================== */}
-
       {showSubmit && (
-
         <div className="submit-modal-backdrop">
-
           <div className="submit-modal">
-
             <div className="submit-modal-icon">
               <AlertTriangle size={25} />
             </div>
-
             <div className="submit-modal-label">
               ROUND 01 · SUBMISSION
             </div>
 
-            <h2>
-              Submit your attempt?
-            </h2>
-
+            <h2>Submit your attempt?</h2>
             <p>
-              Once submitted, your answers cannot
-              be changed. Your score will be calculated
-              immediately.
+              Once submitted, your answers cannot be changed. Your score will be calculated immediately.
             </p>
 
-
             <div className="submit-summary">
-
               <div>
                 <span>QUESTIONS</span>
-                <strong>
-                  {questions.length}
-                </strong>
+                <strong>{questions.length}</strong>
               </div>
-
               <div>
                 <span>ANSWERED</span>
-                <strong>
-                  {
-                    Object.keys(answers).length
-                  }
-                </strong>
+                <strong>{Object.keys(answers).length}</strong>
               </div>
-
               <div>
                 <span>REMAINING</span>
                 <strong>
                   {Math.max(
                     0,
-                    questions.length -
-                      Object.keys(answers).length
+                    questions.length - Object.keys(answers).length
                   )}
                 </strong>
               </div>
-
             </div>
 
-
             <div className="submit-modal-actions">
-
               {!submitted && (
                 <button
                   className="cancel-submit"
-                  onClick={() =>
-                    setShowSubmit(false)
-                  }
+                  onClick={() => setShowSubmit(false)}
                 >
                   GO BACK
                 </button>
               )}
-
               <button
                 className="confirm-submit"
                 onClick={submitQuiz}
@@ -703,15 +613,10 @@ const Round1 = () => {
                 CONFIRM SUBMISSION
                 <ChevronRight size={17} />
               </button>
-
             </div>
-
           </div>
-
         </div>
-
       )}
-
     </main>
   );
 };
